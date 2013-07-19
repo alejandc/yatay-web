@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20130719032451) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "receipts", force: true do |t|
     t.string   "name"
     t.string   "identification_kind"
@@ -47,6 +44,9 @@ ActiveRecord::Schema.define(version: 20130719032451) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "username"
+    t.string   "name"
+    t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
