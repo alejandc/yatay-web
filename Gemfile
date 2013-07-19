@@ -1,27 +1,23 @@
 source 'https://rubygems.org'
 
-gem 'debugger'
 gem 'pg'
 gem 'therubyracer'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
-
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'devise'
+gem 'devise-encryptable'
+gem 'kaminari'
+gem 'unicorn'
+gem 'cancan'
+gem 'rolify'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+gem 'twitter-bootstrap-rails'
+gem 'less-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -41,8 +37,13 @@ end
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+group :develop, :test do
+  gem 'capistrano'          
+  gem 'capistrano-unicorn'
+  gem 'rvm-capistrano'      
+  gem 'rspec-rails'         
+  gem 'debugger'            
+  gem 'annotate'            
+end
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+
