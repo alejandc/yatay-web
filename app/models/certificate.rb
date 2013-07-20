@@ -31,6 +31,7 @@
 #
 
 class Certificate < ActiveRecord::Base
+  paginates_per 20
   after_initialize :preset_values
 
   def preset_values
