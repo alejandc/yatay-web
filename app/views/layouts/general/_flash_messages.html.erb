@@ -1,0 +1,25 @@
+<% unless flash.empty? %>
+  <div class="row-fluid">
+    <div class="span12">
+      
+      <!-- remove timedout key from flash messages -->
+      <% flash.delete(:timedout) %>
+
+      <% flash.each do |name, messages| %>
+        <% unless messages.blank? %>
+          <div class="alert alert-<%= name.to_s.gsub('notice', 'success') %>">
+            <% messages = [messages] if messages.instance_of? String %>
+            <ul>
+              <% messages.each do |msg| %>
+                <%= content_tag(:li, msg, :style => "margin-top: 5px;") %>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      <% end %>
+
+      <% flash.clear %>
+    </div>
+  </div>
+<% end %>
+

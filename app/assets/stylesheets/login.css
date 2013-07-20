@@ -1,0 +1,45 @@
+body.login {
+    background-color: #88BE71;
+    color: #838383;
+    font: 13px/1.7em 'Open Sans';
+    margin-top: 70px;
+}
+
+.account-container {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border: 1px solid #D5D5D5;
+    border-radius: 4px 4px 4px 4px;
+    display: block;
+    margin: 0px auto 0;
+    width: 380px;
+}
+
+.login-form {
+  padding: 25px;
+}
+
+.login-fields {
+    background-color: #FDFDFD;
+    box-shadow: 2px 2px 4px #F1F1F1 inset !important;
+    color: #8E8D8D;
+    display: block;
+    font-family: 'Open Sans';
+    font-size: 13px !important;
+    margin: 0;
+    padding: 9px 15px 7px 50px !important;
+    width: 263px;
+}
+
+.username-field {
+    background: url("user.png") no-repeat scroll 0 0 transparent !important;
+}
+
+.password-field {
+    background: url("password.png") no-repeat scroll 0 0 transparent !important;
+}
+
+
+.register {
+    padding-left: 6px !important;
+    width: 307px;
+}
