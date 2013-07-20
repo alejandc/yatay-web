@@ -23,9 +23,20 @@ class CertificatesController < ApplicationController
     
   end
   
+
   def show
+    @certificate = Certificate.find(params[:id])
     
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = CertificatePdf.new(@certificate, view_context)
+        send_data pdf.render, filename: "certificado_tecnico_#{@certificate.titular.gsub(/\s+/, '_')}.pdf", type: "application/pdf", disposition: "inline"
+      end
+    end
   end
+
+
   
   def edit
     @certificate = Certificate.find(params[:id])

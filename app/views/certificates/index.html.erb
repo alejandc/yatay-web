@@ -23,6 +23,7 @@
             <th> <%=t('.table_th_car_model')%> </th>
             <th> <%=t('.table_th_motor_number')%> </th>
             <th> <%=t('.table_th_domain_number')%> </th>
+            <th style="text-align: center;"> <%=t('.table_th_actions')%> </th>
           </tr>
         </thead>
 
@@ -37,6 +38,13 @@
               <td><%= certificate.car_model %></td>
               <td><%= certificate.motor_number %></td>
               <td><%= certificate.domain_number %></td>
+              
+              <td style="text-align: center;">
+                <div class="btn-group">
+                  <%= link_to "<i class='icon-eye-open'></i>".html_safe, certificate_path(certificate), :class => 'btn', :rel => 'tooltip', :title => 'Detalle' %>
+                  <%= link_to "<i class='icon-print'></i>".html_safe, certificate_path(certificate, format: "pdf"), :class => 'btn', :rel => 'tooltip', :title => 'Imprimir', :target => "_blank" %>
+                </div>
+              </td>
             </tr>
           <% end %>
         </tbody>

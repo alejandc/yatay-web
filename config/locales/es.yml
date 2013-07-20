@@ -193,6 +193,7 @@ es:
       table_th_motor_number: Motor
       table_th_chasis_number: Chasis
       table_th_domain_number: Dominio
+      table_th_actions: Acciones
     filters:
       link_filter: Filtros
       button_apply_filter: Buscar
