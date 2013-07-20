@@ -182,8 +182,7 @@ es:
     index:
       info_label_empty_certificates: No hay certificados ingresados por el momento...
       table_th_titular: Titular
-      table_th_document_type: Tipo Doc.
-      table_th_document_number: Número Doc.
+      table_th_document: Documento
       table_th_taxi_license_number: Licencia
       table_th_clock_brand: Marca Reloj
       table_th_clock_number: Número Reloj
