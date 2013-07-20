@@ -22,6 +22,8 @@
 #
 
 class User < ActiveRecord::Base
+  paginates_per 20
+  
   rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -30,5 +32,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  validates :username, :uniqueness => true, :presence => true
+  validates :username, :email, :uniqueness => true, :presence => true
 end
