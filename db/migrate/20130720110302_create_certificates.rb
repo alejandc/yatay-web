@@ -8,13 +8,13 @@ class CreateCertificates < ActiveRecord::Migration
       t.string  :cuit
       t.string  :legal_metrology_number
       t.integer :technical_certificate_number
-      t.integer :registration_ssty_number
+      t.string  :registration_ssty_number
       
       t.string  :titular
 	    t.string  :document_type
-	    t.integer :document_number
+	    t.string  :document_number
   		t.string  :address
-  		t.integer :taxi_license_number   
+  		t.string  :taxi_license_number   
   		t.string  :car_brand
   		t.string  :clock_brand
   		t.integer :car_model

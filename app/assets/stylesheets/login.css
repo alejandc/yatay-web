@@ -1,5 +1,5 @@
 body.login {
-    background-color: #88BE71;
+    background-color: #88BE71 !important;
     color: #838383;
     font: 13px/1.7em 'Open Sans';
     margin-top: 60px;

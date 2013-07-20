@@ -100,55 +100,7 @@ es:
           BR: Brasil
           MX: México
           PA: Panamá
-      booking_error:
-        error_types:
-          total_amount: monto total
-          taxes: impuestos
-          interest: intereses
-          fee: fee
-          fee_prorated: fee prorrateado
-          total_fare: tarifa total
-          eticket: eticket
-          coupons: cupones
-          markup: markup
-          markdown: markdown
-          payment_type: forma de pago
-          installments: cuotas
-          retention_afip: retención de AFIP
-          risk_analysis: analisis de riesgo
-      booking_result:
-        statuses:
-          in_process: En Proceso
-          finalized: Finalizado
-      product:
-        statuses:
-          created: Creado
-          collected_issued: Cobro/Emisión
-          canceled: Cancelado
-          eticket_sent: Eticket Enviado
-          fee_charged: Fee Cobrado
-          fee_no_charged: Fee no Cobrado
-          revenue_control: Control de Ingreso
-      tolerance:
-        country_codes:
-          AR: Argentina
-          US: EEUU
-          BR: Brasil
-          MX: México
-          PA: Panamá
-        brands:
-          despegar: Despegar
-        processes:
-          created: Creación
-          collected_issued: Cobro/Emisión
-          canceled: Cancelado
-          eticket_sent: Envío de eTicket
-          fee_charged: Cobro del Fee
-          fee_no_charged: Sin cobro del Fee
-          revenue_control: Control de Ingreso
-        tolerance_types:
-          percentage: "%"
-          value: "$"
+          
     errors:
       messages:
         record_invalid: objeto invalido
@@ -184,9 +136,6 @@ es:
 
     models:
       user: Usuario
-      booking: Reserva
-      product: Producto
-      notification: Notificaciones
 
     attributes:
       user:
@@ -195,104 +144,10 @@ es:
         last_name: Apellido
         username: Usuario
         password: Clave
-        gender: Genero
-        birthday: Fecha de nacimiento
         password_confirmation: Conf. clave
         current_password: Clave actual
         remember_me: Recordame
         subscribe_newsletter: Suscripción a las Noticias
-      notification:
-        notification_type: Tipo Notificación
-        notification_info: Notificación
-        from_cd: Origen
-        processed: Procesada
-      tolerance:
-        brand: Origen
-        country_code: País
-        process_cd: Proceso
-        item: Campos
-        tolerance_type_cd: Tipo de Tolerancia
-        tolerance_type_value: Valor Tolerancia
-      booking:
-        brand: Marca
-        booking_code: Código reserva
-        booking_errors_count: Errores
-        product_type: Tipo de producto
-        booking_date: Fecha reserva
-        pnr: PNR
-        country_code: Código país
-        brand: Marca
-        source: Origen
-      booking_site:
-        payment_type_desc: Descripción del pago
-        country_code: Código país
-        currency_code: Código moneda
-        adult_fare: Tarifa adulto
-        child_fare: Tarifa chico
-        infant_fare: Tarifa infante
-        charges: Cargos
-        fee: Fee
-        interest: Intereses
-        total_amount: Monto total
-        coefficient: Coeficiente
-        installments: Cuotas
-        fee_prorated: Fee prorrateado
-        source: Origen
-        transaction_email: Email cliente
-        customer_name: Nombre cliente
-        discount: Descuentos
-        retention_afip: Retención AFIP
-        markdown: Markdown
-        markup: Markup
-      booking_result:
-        customer_name: Nombre cliente
-        transaction_email: Mail cliente
-        country_code: Código país
-        brand: Marca 
-        canceled: Reserva cancelada
-        source: Origen
-        reservation_date: Fecha de reserva
-        crm_site: CRM
-        updated: Actualizada
-        status_cd: Estado
-        modified: Modificada
-      product:
-        type: Tipo
-        product_id: Codigo Producto
-        pnr: PNR
-        last_day_to_purchase: Ultimo día de compra
-        product_type: Tipo de producto
-        provider_code: Código proveedor
-        status_cd: Estado
-        fee_charged: Fee cobrado
-        currency_code: Código moneda
-        conversion_ratio: Porcentaje de conversión
-        fare_type: Tipo tarifa
-        markdown: Markdown
-        fee: Fee
-        card_interest: Interés tarjeta
-        card_interest_fee: Interés Fee
-        fare: Tarifa
-        taxes: Gastos
-        other: Otros
-        commission: Comisión
-        over: Over
-        over_on_fare: Over en tarifa
-        markup: Markup
-        flight_cost: Costo del vuelo
-        coefficient: Coeficiente
-        charges: Cargos
-        total_amount: Monto total
-        adult_fare: Tarifa adulto
-        adult_tax: Impuesto adulto
-        child_fare: Tarifa chico
-        child_tax: Impuesto Chico
-        infant_fare: Tarifa infante
-        infant_tax: Impuesto infante
-        validating_carrier_code: Código carrier
-        validating_carrier_desc: Descripción carrier
-        retention_afip: Retención AFIP
-        handling_card: Manejo de tarjeta
 
 
   helpers:
@@ -322,29 +177,26 @@ es:
       logout_link: "Cerrar sesión"
       settings_link: "Configuración"
       admin_link: "Administración"
+  
+  certificates:
+    index:
+      info_label_empty_certificates: No hay certificados ingresados por el momento...
+      table_th_titular: Titular
+      table_th_document_type: Tipo Doc.
+      table_th_document_number: Número Doc.
+      table_th_taxi_license_number: Licencia
+      table_th_clock_brand: Marca Reloj
+      table_th_clock_number: Número Reloj
+      table_th_car_model: Modelo Auto
+      table_th_motor_number: Motor
+      table_th_chasis_number: Chasis
+      table_th_domain_number: Dominio
 
   admin:
     users:
       index:
         confirm_destroy_popup: "Esta seguro que quiere borrar el usuario?"
         info_label_not_users: No hay usuarios registrados por el momento...
-    tolerances:
-      index:
-        info_label_not_flight_tolerances: No hay tolerancias para el producto Vuelos registradas en el site.
-        confirm_destroy_popup: "Esta seguro que quiere borrar la tolerancia?"
-        
-  dashboard:
-    field_validate_box:
-      total_amount: Monto Total
-      payment_type: Tipo de Pago
-      installments: Cuotas
-      interest: Intereses
-      coupons: Cupones
-      taxes: Impuestos
-      fee: Fee
-      total_fare: Tarifa Total
-      markdown: Markdown
-      markup: Markup
 
   # Page keys
   devise:
