@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20130719032451) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "authentication_token"
     t.string   "username"
     t.string   "name"
     t.string   "last_name"
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 20130719032451) do
     t.datetime "updated_at"
   end
 
+  add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
