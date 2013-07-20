@@ -7,7 +7,6 @@ YatayWeb::Application.routes.draw do
   resources :certificates
   resources :receipts
   
-  resources :admin, :only => [:index]
   namespace :admin do
     resources :users, :except => [:show]
   end

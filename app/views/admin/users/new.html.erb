@@ -1,0 +1,31 @@
+<div class="row-fluid">
+  <div class="span12">
+    
+    <div class="row-fluid">
+      <div class="span10 offset1">
+        <h3>
+          <%= t('.title')%>
+        </h3>
+      </div>
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span7">
+
+        <%= form_for [:admin, @user], :html => { :class => 'form-horizontal', :style => "margin-bottom: 0px;"} do |f|%>
+          <%= render :partial => 'form', :locals => {:f => f} %>
+
+          <div class="control-group">
+            <div class="controls">
+              <%= f.submit t('.button_create_user'), :class => 'btn btn-primary' %> 
+              <%= link_to t('.button_cancel_user'), :back, :class => 'btn' %>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+    
+  </div>
+</div>
+

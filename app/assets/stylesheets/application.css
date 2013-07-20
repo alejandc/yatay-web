@@ -16,3 +16,16 @@ body {
   background-color: #DDDDDD !important;
   color: #333333 !important;
 }
+
+.field_with_errors {
+  display: inline;
+}
+
+.field_with_errors input[type=text],input[type=password],input[type=email], .field_with_errors select {
+  border: 1px solid #B94A48;
+}
+
+.error_message {
+  color: #B94A48;
+  margin-top: 0px;
+}

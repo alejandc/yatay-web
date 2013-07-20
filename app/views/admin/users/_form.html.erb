@@ -1,0 +1,49 @@
+<div class="control-group">
+  <%= f.label :username, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :username, :class => 'input-xlarge', :maxlength => 75 %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :name, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :name, :class => 'input-xlarge', :rows => '5', :maxlength => 250 %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :last_name, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :last_name, :class => 'input-xlarge', :maxlength => 50 %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :email, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :email, :class => 'input-xlarge', :maxlength => 50 %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :password, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.password_field :password, :autocomplete => "off", :class => 'input-xlarge', :maxlength => 50 %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :password_confirmation, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.password_field :password_confirmation, :class => 'input-xlarge', :maxlength => 50 %>
+  </div>
+</div>
+
+
+<div class="control-group">
+  <%= f.label :roles, :class => 'control-label' %>
+  <div class="controls">
+    <%= select_tag 'role', options_for_select(Role::ROLES, f.object.roles.collect {|role| role.name }), :multiple => true, :size => 2 %>
+  </div>
+</div>

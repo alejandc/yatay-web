@@ -1,0 +1,41 @@
+<style id="modal_style_edit_user" type="text/css">
+  .modal-body {
+      max-height: 600px;
+  }
+</style>
+
+<div id="generic_modal_header" class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <h3 id="myModalLabel"> Crear Usuario </h3>
+</div>
+
+<div id="generic_modal_body" class="modal-body">
+  <div class="row-fluid">
+    <div class="span12">
+
+      <%= form_for [:admin, @user], :html => { :class => 'form-horizontal', :style => "margin-bottom: 0px;", :method => :put} do |f|%>
+        <%= render :partial => 'form', :locals => {:f => f} %>
+
+        <div class="control-group">
+          <div class="controls">
+            <%= f.submit t('.button_edit_user'), :class => 'btn btn-primary' %> 
+            <%= link_to t('.button_cancel_edit_user'), :back, :class => 'btn' %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script type="text/javascript" language="javascript" charset="utf-8">
+// <![CDATA[
+  $('#myModal').on('hidden', function () {
+    //Remove specific css attributes for the modal...
+    $('#modal_style_edit_user').remove()
+  })
+
+// ]]>
+</script>

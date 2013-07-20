@@ -161,22 +161,19 @@ es:
 
   # General keys
   access_denied: No tiene permisos para ingresar en esta sección
+  
 
   # Layouts keys
   layouts:
     application:
-      home_link: "Dashboard"
-      logs_link: "Logs"
-      monitoring_link: "Monitoreo"
-      management_link: "Gestión"
-      notification_link: "Notificaciones"
-      more_link: "Más"
-      sing_up_link: "Registrarse"
-      sing_in_link: "Iniciar Sesión"
+      application_brand: "YatayWeb"
+      certificates_link: "Certificados"
+      create_certificate_link: "Crear Certificado"
       profile_link: "Perfil"
       logout_link: "Cerrar sesión"
       settings_link: "Configuración"
-      admin_link: "Administración"
+      admin_link: "Admin"
+      admin_users_link: "Usuarios"
   
   certificates:
     index:
@@ -194,8 +191,17 @@ es:
   admin:
     users:
       index:
+        title: Usuarios
         confirm_destroy_popup: "Esta seguro que quiere borrar el usuario?"
         info_label_not_users: No hay usuarios registrados por el momento...
+      new:
+        title: Crear Usuario
+        button_cancel_user: Cancelar
+        button_create_user: Crear Usuario
+      edit:
+        title: Editar Usuario
+        button_cancel_edit_user: Cancelar
+        button_edit_user: Editar Usuario
 
   # Page keys
   devise:
