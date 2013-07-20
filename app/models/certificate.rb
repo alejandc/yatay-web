@@ -47,4 +47,22 @@ class Certificate < ActiveRecord::Base
       self.registration_ssty_number     = "036"
     end
   end
+  
+  def self.search(certificate_filter)
+    query = {}
+    
+    unless certificate_filter.titular.blank?
+      query['titular'] = certificate_filter.titular
+    end
+    
+    unless certificate_filter.taxi_license_number.blank?
+      query['taxi_license_number'] = certificate_filter.taxi_license_number
+    end
+    
+    unless certificate_filter.clock_number.blank?
+      query['clock_number'] = certificate_filter.clock_number
+    end
+    
+    where(query)
+  end
 end

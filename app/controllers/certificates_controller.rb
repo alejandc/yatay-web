@@ -1,7 +1,18 @@
 class CertificatesController < ApplicationController
   
   def index
-    @certificates = Certificate.order("created_at DESC").page(params[:page])
+    respond_to do |format|
+      format.html do
+        @certificate = Certificate.new
+        
+        if params[:certificate]
+          @certificate.attributes = params[:certificate]
+          @certificates = Certificate.search(@certificate).order("created_at DESC").page(params[:page])
+        else
+          @certificates = Certificate.order("created_at DESC").page(params[:page])
+        end
+      end
+    end
   end
   
   def new
@@ -23,4 +34,12 @@ class CertificatesController < ApplicationController
   def update
     
   end
+  
+  private
+    def certificate_params
+      params_certificate = ActionController::Parameters.new(params['certificate'])
+      params_certificate.permit!
+      params_certificate
+    end
+  
 end

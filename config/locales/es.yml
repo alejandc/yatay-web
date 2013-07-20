@@ -136,6 +136,7 @@ es:
 
     models:
       user: Usuario
+      certificate: Certificado
 
     attributes:
       user:
@@ -148,6 +149,10 @@ es:
         current_password: Clave actual
         remember_me: Recordame
         subscribe_newsletter: Suscripción a las Noticias
+      certificate:
+        taxi_license_number: Número Licencia
+        clock_number: Número Reloj
+        titular: Titular
 
 
   helpers:
@@ -178,6 +183,7 @@ es:
   certificates:
     index:
       info_label_empty_certificates: No hay certificados ingresados por el momento...
+      info_label_empty_filter_certificates: No se encontraron certificados con el filtro aplicado...
       table_th_titular: Titular
       table_th_document: Documento
       table_th_taxi_license_number: Licencia
@@ -187,6 +193,10 @@ es:
       table_th_motor_number: Motor
       table_th_chasis_number: Chasis
       table_th_domain_number: Dominio
+    filters:
+      link_filter: Filtros
+      button_apply_filter: Buscar
+      button_delete_filter: Borrar Filtro
 
   admin:
     users:

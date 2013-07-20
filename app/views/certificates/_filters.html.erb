@@ -1,0 +1,53 @@
+<div class="row-fluid">
+  <div class="span10 offset1">
+    
+    <div class="accordion" id="accordion2">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <div class="row-fluid">
+            <div class="span24">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse_certificate_filter">
+                <%= t('.link_filter')%>
+              </a>
+            </div>
+          </div>
+              
+        </div>
+        
+        <div id="collapse_certificate_filter" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <%= form_for @certificate, url: certificates_path, method: 'get', html: {class: 'form-inline', style: 'margin-bottom: 0px;'} do |f| %>
+              
+              <div class="row-fluid">
+                <div class="span3">
+                  <%= f.label :titular, :class => 'control-label' %> &nbsp;
+                  <%= f.text_field :titular, :class => 'span12' %>
+                </div>
+                
+                <div class="span3">
+                  <%= f.label :taxi_license_number, :class => 'control-label' %> &nbsp;
+                  <%= f.text_field :taxi_license_number, :class => 'span12' %>
+                </div>
+                
+                <div class="span3">
+                  <%= f.label :clock_number, :class => 'control-label' %> &nbsp;
+                  <%= f.text_field :clock_number, :class => 'span12' %>
+                </div>
+
+                
+                <div class="span3">
+                  <div class="pull-right" style="margin-top: 31px;">
+                    <%= submit_tag t('.button_apply_filter'), class: 'btn btn-primary', name: 'buscar' %>
+                    &nbsp;&nbsp;&nbsp;
+                    <%= link_to t('.button_delete_filter'), certificates_path, :class => '' %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

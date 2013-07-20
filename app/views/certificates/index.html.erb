@@ -1,9 +1,15 @@
+<%= render :partial => "filters" %>
+
 <div class="row-fluid">
   <div class="span10 offset1">
     
     <% if @certificates.blank? %>
         <div class="alert alert-warning">
-          <%= t('.info_label_empty_certificates') %>
+          <% if params[:certificate]%>
+            <%= t('.info_label_empty_filter_certificates') %>
+          <% else %>
+            <%= t('.info_label_empty_certificates') %>
+          <% end %>
         </div>
     <% else %>
       <table class="table table-striped table-bordered table-condensed">
