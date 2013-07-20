@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/prawnpdf/prawn
+  revision: 8028ca0cd2aae8c72df9fc4bf16388948423bcb2
+  branch: master
+  specs:
+    prawn (1.0.0.rc2)
+      afm
+      pdf-reader (~> 1.2)
+      ruby-rc4
+      ttfunk (~> 1.0.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -111,9 +122,6 @@ GEM
       ttfunk
     pg (0.15.1)
     polyglot (0.3.3)
-    prawn (0.12.0)
-      pdf-reader (>= 0.9.0)
-      ttfunk (~> 1.0.2)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -212,7 +220,7 @@ DEPENDENCIES
   kaminari
   less-rails
   pg
-  prawn
+  prawn!
   rails (= 4.0.0)
   rolify
   rspec-rails

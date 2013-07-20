@@ -9,7 +9,7 @@ gem 'kaminari'
 gem 'unicorn'
 gem 'cancan'
 gem 'rolify'
-gem 'prawn'
+gem 'prawn', git: 'git://github.com/prawnpdf/prawn', branch: 'master' 
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
