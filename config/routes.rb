@@ -4,11 +4,13 @@ YatayWeb::Application.routes.draw do
     get "/users/sign_up", :to => "devise/sessions#new"
   end
   
+  resources :certificates
+  resources :receipts
+  
   resources :admin, :only => [:index]
   namespace :admin do
     resources :users, :except => [:show]
   end
-  resources :receipts
   
   root :to => "devise/sessions#new"
 end

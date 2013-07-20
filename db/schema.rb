@@ -11,10 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130719032451) do
+ActiveRecord::Schema.define(version: 20130720110302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "certificates", force: true do |t|
+    t.string   "registrant"
+    t.string   "business_address"
+    t.string   "gross_income_number"
+    t.string   "habilitation"
+    t.string   "cuit"
+    t.string   "legal_metrology_number"
+    t.integer  "technical_certificate_number"
+    t.integer  "registration_ssty_number"
+    t.string   "titular"
+    t.string   "document_type"
+    t.integer  "document_number"
+    t.string   "address"
+    t.integer  "taxi_license_number"
+    t.string   "car_brand"
+    t.string   "clock_brand"
+    t.integer  "car_model"
+    t.string   "domain_number"
+    t.string   "clock_number"
+    t.string   "precinct_number"
+    t.string   "motor_number"
+    t.string   "chasis_number"
+    t.text     "observations"
+    t.integer  "pulses_per_km"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "certificates", ["chasis_number"], name: "index_certificates_on_chasis_number", using: :btree
+  add_index "certificates", ["clock_brand"], name: "index_certificates_on_clock_brand", using: :btree
+  add_index "certificates", ["clock_number"], name: "index_certificates_on_clock_number", using: :btree
+  add_index "certificates", ["document_number"], name: "index_certificates_on_document_number", using: :btree
+  add_index "certificates", ["domain_number"], name: "index_certificates_on_domain_number", using: :btree
+  add_index "certificates", ["motor_number"], name: "index_certificates_on_motor_number", using: :btree
+  add_index "certificates", ["precinct_number"], name: "index_certificates_on_precinct_number", using: :btree
+  add_index "certificates", ["taxi_license_number"], name: "index_certificates_on_taxi_license_number", using: :btree
+  add_index "certificates", ["titular"], name: "index_certificates_on_titular", using: :btree
 
   create_table "receipts", force: true do |t|
     t.string   "name"
