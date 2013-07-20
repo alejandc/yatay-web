@@ -9,6 +9,7 @@ gem 'kaminari'
 gem 'unicorn'
 gem 'cancan'
 gem 'rolify'
+gem 'prawn'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
