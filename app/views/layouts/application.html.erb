@@ -22,7 +22,7 @@
           
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="<%= (controller_name == "certificates" and action_name =="index") ? "active" : "" %>">
+              <li class="<%= (controller_name == "certificates" and action_name.match(/index|show/)) ? "active" : "" %>">
                 <a href="/certificates"> <%= t('.certificates_link')%> </a>
               </li>
               <li class="<%= (controller_name =="certificates" and action_name == "new") ? "active" : "" %>"> 
