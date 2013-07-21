@@ -1,0 +1,157 @@
+<div class="row-fluid">
+  <div class="span10 offset1">
+    
+    <table class="table table-striped table-bordered table-condensed">
+      <tbody>
+        <tr>
+          <td colspan="3" style="text-align: center;"> 
+            CERTIFICADO TECNICO <br/> 
+            RELOJ TAXIMETRO <br/> 
+            GOBIERNO DE LA CIUDAD DE BUENOS AIRES <br/>
+            Resolución Nro. 261 - SPS - 95
+          </td>
+        </tr>
+        
+        <tr>
+          <td colspan="2">
+            Titular del Registro: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= @certificate.registrant %>
+          </td>
+          
+          <td colspan="1" rowspan="2" style="text-align: center;">
+            Nro. de Certificado <br/>
+            Técnico <br/>
+            <%= @certificate.technical_certificate_number %><br/> <br/>
+            ORIGINAL
+          </td>
+        </tr>
+        
+        <tr>
+          <td colspan="2">
+            Domicilio Comercial: &nbsp;&nbsp;&nbsp;&nbsp; <%= @certificate.business_address %>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            Nro. Ingresos Brutos: &nbsp;&nbsp; <%= @certificate.gross_income_number %>
+          </td>
+          
+          <td>
+            Nro. C.U.I.T.: &nbsp;&nbsp;&nbsp;&nbsp; <%= @certificate.cuit %>
+          </td>
+          
+          <td style="text-align: center">
+            Nro. Registro SSTy <%= @certificate.registration_ssty_number %>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            Habilitación: &nbsp;&nbsp;&nbsp;&nbsp; <%= @certificate.habilitation %>
+          </td>
+          
+          <td>
+            Nro. Metrología Legal: &nbsp;&nbsp;&nbsp;&nbsp; <%= @certificate.legal_metrology_number %>
+          </td>
+          
+          <td style="text-align: center">
+            Fecha Emisión <br/>
+            <%= @certificate.created_at.strftime("%d/%m/%Y") %>
+          </td>
+        </tr>
+        
+        <tr> <td colspan="3"> <br/> </td> </tr>
+        
+        <tr>
+          <td colspan="3">
+            Titular Licencia de Taxi: <%= @certificate.titular %>
+          </td> 
+        </tr>
+        
+        <tr>
+          <td colspan="1">
+            Documento Tipo: <%= @certificate.document_type %>
+          </td>
+          <td colspan="2">
+            Nro. Documento: <%= @certificate.document_number %>
+          </td>
+        </tr>
+        
+        <tr>
+          <td colspan="3">
+            Domicilio Legal: <%= @certificate.address %>
+          </td>
+        </tr>
+        
+        <tr>
+          <td colspan="1">
+            Licencia Taxi Nro.: <%= @certificate.taxi_license_number %>
+          </td>
+          <td colspan="2">
+            Marca de Auto: <%= @certificate.car_brand %>
+          </td>
+        </tr>
+        
+        <tr>
+          <td colspan="1">
+            Marca de Reloj: <%= @certificate.clock_brand %>
+          </td>
+          <td colspan="2">
+            Modelo Año: <%= @certificate.car_model %>
+          </td>
+        </tr>
+        
+        <tr>
+          <td colspan="1">
+            Nro. de Reloj: <%= @certificate.clock_number %>
+          </td>
+          <td colspan="2">
+            Dominio Nro.: <%= @certificate.domain_number %>
+          </td>
+        </tr>
+        
+        <tr>
+          <td colspan="1" rowspan="2">
+            Nro. de Precinto: <%= @certificate.precinct_number %>
+          </td>
+          <td colspan="2">
+            Nro. de Motor: <%= @certificate.motor_number %>
+          </td>
+        </tr>
+        
+        <tr>
+          <td colspan="2">
+            Nro. de Chasis: <%= @certificate.chasis_number %>
+          </td>
+        </tr>
+        
+        <tr> <td colspan="3"> <br/> </td> </tr>
+        
+        <tr> 
+          <td colspan="3">
+            Trabajo Realizado / Observaciones
+            <br/><br/><br/><br/>
+            Pulsos por Kilómetros
+          </td> 
+        </tr>
+        
+        <tr> <td colspan="3"> <br/> </td> </tr>
+        
+        <tr> 
+          <td colspan="1" style="text-align: center;">
+            <br/><br/><br/>
+            FIRMA Y ACLARACION DEL <br/>
+            TITULAR LICENCIA
+          </td>
+          
+          <td colspan="2" style="text-align: center;">
+            <br/><br/><br/>
+            FIRMA Y SELLO DEL <br/>
+            RESPONSABLE DEL TALLER
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+</div>

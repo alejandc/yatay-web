@@ -33,6 +33,8 @@
 class Certificate < ActiveRecord::Base
   paginates_per 20
   after_initialize :preset_values
+  before_save :set_technical_certificate_number
+
 
   def preset_values
     if self.new_record?
@@ -42,12 +44,18 @@ class Certificate < ActiveRecord::Base
       self.habilitation                 = "2004497/2012"
       self.cuit                         = "20-11554805-1"
       self.legal_metrology_number       = "7595"
-      # Se debe autoincrementar el technical_certificate_number
-      #self.technical_certificate_number = 0
       self.registration_ssty_number     = "036"
     end
   end
   
+  # Autoincrementamos el numero del certificado tecnico
+  def set_technical_certificate_number
+    if self.technical_certificate_number.nil?
+      self.technical_certificate_number = ActiveRecord::Base.connection.select_value("select nextval('technical_certificate_no')")
+    end
+  end
+  
+  # Metodo para aplicar el filtro seteado por el usuario
   def self.search(certificate_filter)
     query = {}
     
@@ -65,4 +73,5 @@ class Certificate < ActiveRecord::Base
     
     where(query)
   end
+  
 end
