@@ -10,10 +10,6 @@ class CreateCertificates < ActiveRecord::Migration
       t.integer :technical_certificate_number
       t.string  :registration_ssty_number
       
-      t.string  :titular
-	    t.string  :document_type
-	    t.string  :document_number
-  		t.string  :address
   		t.string  :taxi_license_number   
   		t.string  :car_brand
   		t.string  :clock_brand
@@ -26,13 +22,15 @@ class CreateCertificates < ActiveRecord::Migration
   		t.text    :observations
   		t.integer :pulses_per_km
 
+      t.references :client
+
       t.timestamps
     end
     
-    add_index :certificates, :titular
-    add_index :certificates, :document_number
+    #add_index :certificates, :titular
+    #add_index :certificates, :document_number
     add_index :certificates, :clock_brand
-    add_index :certificates, :taxi_license_number
+    #add_index :certificates, :taxi_license_number
     add_index :certificates, :clock_number
     add_index :certificates, :precinct_number
     add_index :certificates, :motor_number

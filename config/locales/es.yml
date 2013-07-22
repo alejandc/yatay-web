@@ -173,6 +173,8 @@ es:
     application:
       application_brand: "YatayWeb"
       certificates_link: "Certificados"
+      clients_link: "Clientes"
+      create_client_link: "Nuevo cliente"
       create_certificate_link: "Crear Certificado"
       profile_link: "Perfil"
       logout_link: "Cerrar sesión"
@@ -183,7 +185,9 @@ es:
   certificates:
     index:
       info_label_empty_certificates: No hay certificados ingresados por el momento...
+      info_label_empty_clients: No hay clientes ingresados por el momento...
       info_label_empty_filter_certificates: No se encontraron certificados con el filtro aplicado...
+      info_label_empty_filter_clients: No se encontraron clientes con el filtro aplicado...
       table_th_titular: Titular
       table_th_document: Documento
       table_th_taxi_license_number: Licencia

@@ -10,9 +10,10 @@
     </div>
     
     <div class="row-fluid">
-      <div class="span7">
+      <div class="span7 offset1">
 
-        <%= form_for [:admin, @user], :html => { :class => 'form-horizontal', :style => "margin-bottom: 0px;"} do |f|%>
+        <%= form_for [:admin, @user], :html => { :class => 'form-horizontal', :style => "margin-bottom: 0px;"} do |f| %>
+          
           <%= render :partial => 'form', :locals => {:f => f} %>
 
           <div class="control-group">

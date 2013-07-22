@@ -13,6 +13,7 @@
         </tr>
         
         <tr>
+          <%debugger %>
           <td colspan="2">
             Titular del Registro: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= @certificate.registrant %>
           </td>
@@ -64,22 +65,22 @@
         
         <tr>
           <td colspan="3">
-            Titular Licencia de Taxi: <%= @certificate.titular %>
+            Titular Licencia de Taxi: <%= @certificate.client.titular %>
           </td> 
         </tr>
         
         <tr>
           <td colspan="1">
-            Documento Tipo: <%= @certificate.document_type %>
+            Documento Tipo: <%= @certificate.client.document_type %>
           </td>
           <td colspan="2">
-            Nro. Documento: <%= @certificate.document_number %>
+            Nro. Documento: <%= @certificate.client.document_number %>
           </td>
         </tr>
         
         <tr>
           <td colspan="3">
-            Domicilio Legal: <%= @certificate.address %>
+            Domicilio Legal: <%= @certificate.client.address %>
           </td>
         </tr>
         

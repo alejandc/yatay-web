@@ -11,10 +11,6 @@
 #  legal_metrology_number       :string(255)
 #  technical_certificate_number :integer
 #  registration_ssty_number     :string(255)
-#  titular                      :string(255)
-#  document_type                :string(255)
-#  document_number              :string(255)
-#  address                      :string(255)
 #  taxi_license_number          :string(255)
 #  car_brand                    :string(255)
 #  clock_brand                  :string(255)
@@ -26,6 +22,7 @@
 #  chasis_number                :string(255)
 #  observations                 :text
 #  pulses_per_km                :integer
+#  client_id                    :integer
 #  created_at                   :datetime
 #  updated_at                   :datetime
 #
@@ -34,6 +31,8 @@ class Certificate < ActiveRecord::Base
   paginates_per 20
   after_initialize :preset_values
   before_save :set_technical_certificate_number
+
+  belongs_to :client
 
 
   def preset_values

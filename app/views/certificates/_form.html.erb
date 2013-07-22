@@ -1,0 +1,80 @@
+<div class="control-group">
+  <%= f.label :taxi_license_number, "Nro. Licencia:", :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :taxi_license_number, :class => 'input-xlarge' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :car_brand, "Marca Automovil:", :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :car_brand, :class => 'input-xlarge' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :car_model, "Modelo Automovil:", :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :car_model, :class => 'input-xlarge' %>
+  </div>
+</div>
+
+
+<div class="control-group">
+  <%= f.label :clock_brand, "Marca del reloj:", :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :clock_brand, :class => 'input-xlarge' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :clock_number, "Nro. reloj:", :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :clock_number, :class => 'input-xlarge' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :domain_number, "Nro. dominio:", :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :domain_number, :class => 'input-xlarge' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :precinct_number, "Nro. precinto:", :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :precinct_number, :class => 'input-xlarge' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :motor_number, "Nro. motor:", :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :motor_number, :class => 'input-xlarge' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :chasis_number, "Nro. chasis:", :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :chasis_number, :class => 'input-xlarge' %>
+  </div>
+</div>
+
+
+<div class="control-group">
+  <%= f.label :observations, "Observaciones:", :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :observations, :class => 'input-xlarge' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :pulses_per_km, "Pulsos por Km:", :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :pulses_per_km, :class => 'input-xlarge' %>
+  </div>
+</div>
+
+<%= f.hidden_field(:client_id, value: params[:client_id]) %>
