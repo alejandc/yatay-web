@@ -40,7 +40,7 @@ class CertificatePdf < Prawn::Document
                {:content => "Marca Auto: #{@certificate.car_brand}", :colspan => 2}],
 
               [{:content => "Marca del reloj: \n #{@certificate.clock_brand}", :colspan => 1},
-               {:content => "Modelo año: #{@certificate.car_model}", :colspan => 2}],
+               {:content => "Modelo Auto: #{@certificate.car_model}", :colspan => 2}],
               
               [{:content => "Nro. de reloj: \n #{@certificate.clock_number}", :colspan => 1},
                {:content => "Dominio Nro.: #{@certificate.domain_number}", :colspan => 2}],
