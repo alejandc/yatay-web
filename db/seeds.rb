@@ -4,6 +4,9 @@ user1.add_role :admin
 user2 = User.create(:username => "lara", :email => 'monti.lara.i@gmail.com', :password => "admin1234", :password_confirmation => "admin1234")
 user2.add_role :admin
 
+user3 = User.create(:username => "admin", :email => 'admin@admin.com', :password => "admin1234", :password_confirmation => "admin1234")
+user3.add_role :admin
+
 30.times do
   Certificate.create!(titular:             "Pedro Lopez",
                       document_type:       "DNI",
