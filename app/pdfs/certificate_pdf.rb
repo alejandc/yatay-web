@@ -24,7 +24,7 @@ class CertificatePdf < Prawn::Document
                {:content => "Nro. Registro SSTy \n #{@certificate.registration_ssty_number}", :align => :center}],
 
               [{:content => "Habilitación: #{@certificate.habilitation}"},
-               {:content => "Nro. Metrologia Legal: #{@certificate.legal_metrology_number}"}, 
+               {:content => "Nro. Metrología Legal: #{@certificate.legal_metrology_number}"}, 
                {:content => "Fecha Emisión: \n #{@certificate.created_at.strftime('%d/%m/%Y')}", :align => :center}],
 
               [{:content => "", :colspan => 3}],
@@ -37,7 +37,7 @@ class CertificatePdf < Prawn::Document
               [{:content => "Domicilio legal: #{@certificate.address}", :colspan => 3}],
 
               [{:content => "Licencia Taxi Nro.: #{@certificate.taxi_license_number}", :colspan => 1},
-               {:content => "Marca auto: #{@certificate.car_brand}", :colspan => 2}],
+               {:content => "Marca Auto: #{@certificate.car_brand}", :colspan => 2}],
 
               [{:content => "Marca del reloj: \n #{@certificate.clock_brand}", :colspan => 1},
                {:content => "Modelo año: #{@certificate.car_model}", :colspan => 2}],
