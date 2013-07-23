@@ -142,9 +142,27 @@ es:
         remember_me: Recordame
         subscribe_newsletter: Suscripción a las Noticias
       certificate:
-        taxi_license_number: Número Licencia
-        clock_number: Número Reloj
-        titular: Titular
+        registrant: Registrante
+        business_address: Dirección
+        gross_income_number: Nro. Ingresos Brutos
+        habilitation: Habilitación
+        cuit: CUIT  
+        legal_metrology_number: Nro. Metrología Legal
+        technical_certificate_number: Nro. Certificado Técnico
+        registration_ssty_number: Nro. Registracion SSTy
+        taxi_license_number: Nro. Licencia
+        car_brand: MArca Auto
+        clock_brand: Marca Reloj       
+        car_model: Modelo Auto
+        domain_number: Nro. Dominio
+        clock_number: Nro. Reloj
+        precinct_number: Nro. Precinto
+        motor_number: Nro. Motor
+        chasis_number: Nro. Chasis
+        observations: Observaciones
+        pulses_per_km: Pulsos por Kilómetro
+        client_id: CLiente
+        
       client:
         name: Nombre
         document_type: Tipo documento

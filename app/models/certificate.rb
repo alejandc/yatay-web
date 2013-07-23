@@ -48,7 +48,7 @@ class Certificate < ActiveRecord::Base
             :legal_metrology_number, :technical_certificate_number, :registration_ssty_number,
             :taxi_license_number, :car_brand, :clock_brand, :car_model, :domain_number, :clock_number,
             :precinct_number, :motor_number, :chasis_number, :observations, :pulses_per_km, 
-            format: { with: /\A[a-zA-Z\d_-]+\z/ , message: "Only letters allowed"}
+            format: { with: /\A[a-zA-Z\d\s\._-]+\z/ , message: "No se permiten caracteres especiales"}
             
   validates :registrant, :business_address, :gross_income_number, :habilitation, :cuit, 
             :legal_metrology_number, :technical_certificate_number, :registration_ssty_number,
@@ -60,7 +60,7 @@ class Certificate < ActiveRecord::Base
       self.registrant                   = "RELOJERIA YATAY"
       self.business_address             = "Yatay 278"
       self.gross_income_number          = "1256878-3"
-      self.habilitation                 = "2004497/2012"
+      self.habilitation                 = "2004497-2012"
       self.cuit                         = "20-11554805-1"
       self.legal_metrology_number       = "7595"
       self.registration_ssty_number     = "036"

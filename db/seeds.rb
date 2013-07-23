@@ -16,7 +16,7 @@ user3.add_role :admin
   
   
   10.times do
-    Certificate.create!(taxi_license_number: "#{rand(0..99999)}",
+    certificate = Certificate.new(taxi_license_number: "#{rand(0..99999)}",
                         car_brand:           "Chevrolet",
                         clock_brand:         "FUL-MAR",
                         car_model:           2013,
@@ -26,8 +26,11 @@ user3.add_role :admin
                         motor_number:        "JSDJ8726387126",
                         chasis_number:       "KJ3H42KLJ43243KJH",
                         observations:        "Sin observaciones",
+                        technical_certificate_number: rand(00000000..99999999),
                         pulses_per_km:       rand(1..10),
                         client:              client)
+    
+    certificate.save!
   end
 end
 
