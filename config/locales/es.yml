@@ -195,6 +195,7 @@ es:
       table_th_clock_number: Nro. Reloj
       table_th_car_model: Modelo Auto
       table_th_actions: Acciones
+      button_create_certificate: Crear Certificado
       
   certificates:
     index:
