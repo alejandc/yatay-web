@@ -20,6 +20,7 @@ class CertificatesController < ApplicationController
   
   def new
     @certificate = Certificate.new
+    @client_id = params[:client_id]
   end
   
   def edit
@@ -32,6 +33,7 @@ class CertificatesController < ApplicationController
     if @certificate.save
       redirect_to certificates_path, :notice => I18n.t('notice_certificate_created_successfully')
     else
+      @client_id = params[:client_id]
       respond_to do |format|
         format.html { render :new }
       end
