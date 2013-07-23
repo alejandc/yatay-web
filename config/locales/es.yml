@@ -197,6 +197,7 @@ es:
       table_th_car_model: Modelo Auto
       table_th_actions: Acciones
       button_create_certificate: Crear Certificado
+      label_link_to_back: Volver
     new:
       title: Crear Cliente
       button_create_execution: Crear Cliente
