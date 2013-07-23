@@ -6,9 +6,11 @@
 
 <div class="row-fluid">
   <div class="span3 offset1">
-    <label>Nombre:</label><span> <%= @client.name %></span>
-    <label>Documento de identidad:</label> <span><%= @client.document_type + " " + @client.document_number %></span>
-    <label>Direccion:</label><span> <%= @client.address %></span>
+    <label><b>Nombre:</b></label><span> <%= @client.name %></span>
+    <br/><br/>
+    <label><b>Documento de identidad:</b></label> <span><%= @client.document_type + " " + @client.document_number %></span>
+    <br/><br/>
+    <label><b>Direccion:</b></label><span> <%= @client.address %></span>
   </div>
 
   <div class="span7">
