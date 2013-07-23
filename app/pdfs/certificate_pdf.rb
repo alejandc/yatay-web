@@ -56,7 +56,7 @@ class CertificatePdf < Prawn::Document
       [{:content => "Documento tipo: #{@client.document_type}", :colspan => 1, :borders => [:top, :left, :bottom]},
        {:content => "Documento Nro.: #{@client.document_number}", :colspan => 2, :borders => [:top, :bottom, :right]}],
 
-      [{:content => "Domicilio legal: #{@client.address}", :colspan => 3}],
+      [{:content => "Domicilio legal: #{@client.address} C.A.B.A.", :colspan => 3}],
 
       [{:content => "Licencia Taxi Nro.: #{@certificate.taxi_license_number}", :colspan => 1},
        {:content => "Marca Auto: #{@certificate.car_brand}", :colspan => 2}],
