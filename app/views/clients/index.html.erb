@@ -11,7 +11,7 @@
 <div class="row-fluid">
   <div class="span10 offset1">
     
-    <% if @client.blank? %>
+    <% if @clients.blank? %>
         <div class="alert alert-warning">
           <% if params[:client]%>
             <%= t('.info_label_empty_filter_clients') %>
@@ -34,7 +34,7 @@
         </thead>
 
         <tbody>
-          <% @client.each_with_index do |client, index| %>
+          <% @clients.each_with_index do |client, index| %>
             <tr>
               <td style="text-align: center;"><%= index %></td>
               <td><%= client.name %></td>
@@ -53,7 +53,7 @@
         </tbody>
       </table>
       
-      <%= paginate @client, :window => 2 %>
+      <%= paginate @clients, :window => 2 %>
     
     <% end %> 
   </div>

@@ -6,10 +6,10 @@ class ClientsController < ApplicationController
         @client_filter = Client.new
         
         if params[:client]
-          @client.attributes = params[:client]
-          @client = Client.search(@certificate).order("created_at DESC").page(params[:page])
+          @client_filter.attributes = params[:client]
+          @clients = Client.search(@client_filter).order("created_at DESC").page(params[:page])
         else
-          @client = Client.order("created_at DESC").page(params[:page])
+          @clients = Client.order("created_at DESC").page(params[:page])
         end
       end
     end

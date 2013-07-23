@@ -20,4 +20,19 @@ class Client < ActiveRecord::Base
   def get_document_info
     "#{self.document_type} #{self.document_number}"
   end
+  
+  
+  def self.search(client_filter)
+    query = {}
+    
+    unless client_filter.name.blank?
+      query['name'] = client_filter.name.strip
+    end
+    
+    unless client_filter.document_number.blank?
+      query['document_number'] = client_filter.document_number.strip
+    end
+    
+    where(query)
+  end
 end
