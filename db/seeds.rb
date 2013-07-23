@@ -7,7 +7,7 @@ user2.add_role :admin
 user3 = User.create(:username => "admin", :email => 'admin@admin.com', :password => "admin1234", :password_confirmation => "admin1234")
 user3.add_role :admin
 
-
+=begin
 30.times do 
   client = Client.create!(name: "Alberto #{rand(0..1000)} Lopez",
                           document_type: "DNI",
@@ -33,5 +33,6 @@ user3.add_role :admin
     certificate.save!
   end
 end
+=end
 
      
