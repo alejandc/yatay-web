@@ -19,7 +19,8 @@ class Client < ActiveRecord::Base
 
   validates :document_number, numericality: { only_integer: true }
   validates :document_type, inclusion: { in: Client::DOCUMENT_TYPES }
-  validates :name, :document_type, :document_number, :address, length: { maximum: 250 }
+  validates :name, :document_type, :document_number, :address, length: { maximum: 250 }, 
+            format: { with: /\A[a-zA-Z\d_-]+\z/, message: "Solo se puede ingresar letras, números y los simbolos: - _" }
   validates :name, :document_type, :document_number, :address, :presence => true
   
   def get_document_info

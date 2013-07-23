@@ -36,6 +36,25 @@ class Certificate < ActiveRecord::Base
 
   accepts_nested_attributes_for :client
   
+  
+  validates :technical_certificate_number, :car_model, :pulses_per_km, numericality: { only_integer: true }
+  
+  validates :registrant, :business_address, :gross_income_number, :habilitation, :cuit, 
+            :legal_metrology_number, :technical_certificate_number, :registration_ssty_number,
+            :taxi_license_number, :car_brand, :clock_brand, :car_model, :domain_number, :clock_number,
+            :precinct_number, :motor_number, :chasis_number, :observations, :pulses_per_km, length: { maximum: 250 }
+            
+  validates :registrant, :business_address, :gross_income_number, :habilitation, :cuit, 
+            :legal_metrology_number, :technical_certificate_number, :registration_ssty_number,
+            :taxi_license_number, :car_brand, :clock_brand, :car_model, :domain_number, :clock_number,
+            :precinct_number, :motor_number, :chasis_number, :observations, :pulses_per_km, 
+            format: { with: /\A[a-zA-Z\d_-]+\z/ , message: "Only letters allowed"}
+            
+  validates :registrant, :business_address, :gross_income_number, :habilitation, :cuit, 
+            :legal_metrology_number, :technical_certificate_number, :registration_ssty_number,
+            :taxi_license_number, :car_brand, :clock_brand, :car_model, :domain_number, :clock_number,
+            :precinct_number, :motor_number, :chasis_number, :observations, :pulses_per_km, :client_id, :presence => true
+  
   def preset_values
     if self.new_record?
       self.registrant                   = "RELOJERIA YATAY"
