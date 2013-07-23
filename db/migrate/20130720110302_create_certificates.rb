@@ -27,10 +27,8 @@ class CreateCertificates < ActiveRecord::Migration
       t.timestamps
     end
     
-    #add_index :certificates, :titular
-    #add_index :certificates, :document_number
     add_index :certificates, :clock_brand
-    #add_index :certificates, :taxi_license_number
+    add_index :certificates, :taxi_license_number
     add_index :certificates, :clock_number
     add_index :certificates, :precinct_number
     add_index :certificates, :motor_number

@@ -8,5 +8,8 @@ class CreateClients < ActiveRecord::Migration
 
       t.timestamps
     end
+    
+    add_index :clients, :name
+    add_index :clients, :document_number
   end
 end

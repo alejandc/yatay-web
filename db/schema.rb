@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20130722121524) do
   add_index "certificates", ["domain_number"], name: "index_certificates_on_domain_number", using: :btree
   add_index "certificates", ["motor_number"], name: "index_certificates_on_motor_number", using: :btree
   add_index "certificates", ["precinct_number"], name: "index_certificates_on_precinct_number", using: :btree
+  add_index "certificates", ["taxi_license_number"], name: "index_certificates_on_taxi_license_number", using: :btree
 
   create_table "clients", force: true do |t|
     t.string   "name"
@@ -56,6 +57,9 @@ ActiveRecord::Schema.define(version: 20130722121524) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "clients", ["document_number"], name: "index_clients_on_document_number", using: :btree
+  add_index "clients", ["name"], name: "index_clients_on_name", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"
