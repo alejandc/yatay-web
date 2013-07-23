@@ -48,7 +48,7 @@ class Certificate < ActiveRecord::Base
             :legal_metrology_number, :technical_certificate_number, :registration_ssty_number,
             :taxi_license_number, :car_brand, :clock_brand, :car_model, :domain_number, :clock_number,
             :precinct_number, :motor_number, :chasis_number, :observations, :pulses_per_km, 
-            format: { with: /\A[a-zA-Z\d\s\._-]+\z/ , message: "No se permiten caracteres especiales"}
+            format: { with: /\A[a-zA-Z\d\s\._-]+\z/ , message: "Solo se puede ingresar letras, números y los simbolos: - _ ."}
             
   validates :registrant, :business_address, :gross_income_number, :habilitation, :cuit, 
             :legal_metrology_number, :technical_certificate_number, :registration_ssty_number,
