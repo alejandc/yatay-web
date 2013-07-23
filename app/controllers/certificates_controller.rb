@@ -21,8 +21,8 @@ class CertificatesController < ApplicationController
   end
   
   def create
-    debugger
     @certificate = Certificate.create(params[:certificate])
+    
     respond_to do |format|
       if @certificate.save
         format.html { redirect_to @certificate, notice: 'El certificado fue cargado' }
