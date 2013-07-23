@@ -59,19 +59,25 @@ class Certificate < ActiveRecord::Base
   def self.search(certificate_filter)
     query = {}
     
-    unless certificate_filter.titular.blank?
-      query['titular'] = certificate_filter.titular
+    joins_info = ""
+    unless certificate_filter.client.blank? and certificate_filter.client.name.blank?
+      query['clients.name'] = certificate_filter.client.name.strip
+      joins_info = "JOIN clients ON certificates.client_id = clients.id"
     end
     
     unless certificate_filter.taxi_license_number.blank?
-      query['taxi_license_number'] = certificate_filter.taxi_license_number
+      query['taxi_license_number'] = certificate_filter.taxi_license_number.strip
     end
     
     unless certificate_filter.clock_number.blank?
-      query['clock_number'] = certificate_filter.clock_number
+      query['clock_number'] = certificate_filter.clock_number.strip
     end
     
-    where(query)
+    unless joins_info.blank?
+      joins(joins_info).where(query)
+    else
+      where(query)
+    end
   end
   
 end

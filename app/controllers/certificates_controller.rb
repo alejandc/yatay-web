@@ -8,6 +8,8 @@ class CertificatesController < ApplicationController
         
         if params[:certificate]
           @certificate.attributes = params[:certificate]
+          @certificate.client.attributes = params[:certificate][:client]
+          
           @certificates = Certificate.search(@certificate).order("created_at DESC").page(params[:page])
         else
           @certificates = Certificate.order("created_at DESC").page(params[:page])
