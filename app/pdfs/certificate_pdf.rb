@@ -1,7 +1,7 @@
 class CertificatePdf < Prawn::Document
   
   def initialize(certificate)
-    super(page_size: "A4", page_layout: :landscape)
+    super(page_size: "A4", page_layout: :landscape, :top_margin => 50)
     @certificate = certificate
     @client = certificate.client
     generate_certificate
@@ -12,20 +12,26 @@ class CertificatePdf < Prawn::Document
     data = get_certificate_header
     data += get_certificat_info("ORIGINAL")
     
-    table data, :column_widths => [120, 120, 120], :cell_style => {:size => 9}
+    original = make_table data, :column_widths => [120, 120, 120], :cell_style => {:size => 8, :border_color => '939292'}
     
+    table [[{:content => "", :background_color => '939292'}, original, {:content => "", :background_color => '939292'}],
+           [{:content => "", :colspan => 3, :background_color => '939292'}]], :cell_style => {:border_color => '939292'}
     # Encabezado del certificado
     data = get_certificate_header
     data += get_certificat_info("DUPLICADO")
     
-    move_up 503
-    table data, :column_widths => [120, 120, 120], :position => :right, :cell_style => {:size => 9}
+    duplicated = make_table data, :column_widths => [120, 120, 120], :cell_style => {:size => 8, :border_color => '939292'}
+    
+    move_up 496.5
+    table [[{:content => "", :background_color => '939292'}, duplicated, {:content => "", :background_color => '939292'}],
+           [{:content => "", :colspan => 3, :background_color => '939292'}]], :cell_style => {:border_color => '939292'}, :position => :right
   end
   
   def get_certificate_header
-    [
-      [{:content => "CERTIFICADO TECNICO \n RELOJ TAXIMETRO \n GOBIERNO DE LA CIUDAD DE BUENOS AIRES \n Resolución Nro. 261 - SPS - 95", :colspan => 3, :align => :center, :borders => [:top, :left, :right]}],
-     ]
+    [ 
+      [{:content => "\n CERTIFICADO TECNICO \n RELOJ TAXIMETRO \n GOBIERNO DE LA CIUDAD DE BUENOS AIRES \n Resolución Nro. 261 - SPS - 95 \n\n",
+         :colspan => 3, :align => :center, :borders => [:top, :left, :right], :font_style => :bold, :background_color => '939292', :size => 12}]
+    ]
   end
   
   def get_certificat_info(value)
@@ -43,7 +49,7 @@ class CertificatePdf < Prawn::Document
        {:content => "Nro. Metrología Legal: #{@certificate.legal_metrology_number}"}, 
        {:content => "Fecha Emisión: \n #{@certificate.created_at.strftime('%d/%m/%Y')}", :align => :center, :font_style => :bold}],
 
-      [{:content => "", :colspan => 3}],
+      [{:content => "", :colspan => 3, :background_color => '939292'}],
 
       [{:content => "Titular licencia de taxi: #{@client.name}", :colspan => 3}],
 
@@ -66,11 +72,11 @@ class CertificatePdf < Prawn::Document
        
       [{:content => "Nro. de Chasis: #{@certificate.chasis_number}", :colspan => 2}],
       
-      [{:content => "", :colspan => 3}],
+      [{:content => "", :colspan => 3, :background_color => '939292'}],
       
       [{:content => "Trabajo Realizado / Observaciones: \n\n\n\n Pulsos por kilómetro: #{@certificate.pulses_per_km}", :colspan => 3}],
       
-      [{:content => "", :colspan => 3}],
+      [{:content => "", :colspan => 3, :background_color => '939292'}],
       
       [{:content => "\n\n\n FIRMA Y ACLARACION \n TITULAR LICENCIA", :colspan => 1, :align => :center, :borders => [:top, :left, :bottom]},
        {:content => "\n\n\n FIRMA Y SELLO DEL \n RESPONSABLE DEL TALLER", :colspan => 2, :align => :center, :borders => [:top, :bottom, :right]}]
