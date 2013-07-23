@@ -23,18 +23,17 @@ class CertificatesController < ApplicationController
   end
   
   def create
-    @certificate = Certificate.create(params[:certificate])
+    @certificate = Certificate.new(certificate_params)
     
-    respond_to do |format|
-      if @certificate.save
-        format.html { redirect_to @certificate, notice: 'El certificado fue cargado' }
-      else
-        format.html { render action: "new" }
+    if @certificate.save
+      redirect_to certificates_path, :notice => I18n.t('notice_certificate_created_successfully')
+    else
+      respond_to do |format|
+        format.html { render :new }
       end
-    end    
+    end
   end
   
-
   def show
     @certificate = Certificate.find(params[:id])
     
@@ -47,14 +46,20 @@ class CertificatesController < ApplicationController
     end
   end
 
-
-  
   def edit
     @certificate = Certificate.find(params[:id])
   end
   
   def update
-    
+    @certificate = Certificate.find(params[:id])
+
+		if @certificate.update_attributes(client_params)
+			redirect_to certificates_path
+		else
+			respond_to do |format|
+        format.html { render :edit }
+      end
+		end
   end
   
   private

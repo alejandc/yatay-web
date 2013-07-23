@@ -15,7 +15,7 @@ class Client < ActiveRecord::Base
 
 	has_many :certificates, :dependent => :destroy
 
-  validate :name, :document_type, :document_number, :address, :presence => true
+  validates :name, :document_type, :document_number, :address, :presence => true
   
   def get_document_info
     "#{self.document_type} #{self.document_number}"

@@ -18,17 +18,19 @@ class ClientsController < ApplicationController
   def new
     @client = Client.new
   end
+  
+  def edit
+    @client = Client.find(params[:id])
+  end
 
   def create
-    @client = Client.create(params[:client])
+    @client = Client.new(client_params)
     
-    respond_to do |format|
-      if @client.save
-        format.html { redirect_to @client, notice: 'El cliente fue cargado' }
-        format.json { render json: @client, status: :created, location: @client}
-      else
-        format.html { render action: "new" }
-        format.json { render json: @client.errors, status: :unprocessable_entity }
+    if @client.save
+      redirect_to clients_path, :notice => I18n.t('notice_client_created_successfully')
+    else
+      respond_to do |format|
+        format.html { render :new }
       end
     end
   end
@@ -40,6 +42,18 @@ class ClientsController < ApplicationController
     respond_to do |format|
       format.html
     end
+  end
+  
+  def update
+    @client = Client.find(params[:id])
+
+		if @client.update_attributes(client_params)
+			redirect_to clients_path
+		else
+			respond_to do |format|
+        format.html { render :edit }
+      end
+		end
   end
   
   def destroy

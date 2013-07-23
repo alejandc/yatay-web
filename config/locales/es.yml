@@ -163,7 +163,8 @@ es:
 
   # General keys
   access_denied: No tiene permisos para ingresar en esta sección
-  
+  notice_client_created_successfully: Cliente creado de forma exitosa...
+  notice_certificate_created_successfully: Certificado creado de forma exitosa...
 
   # Layouts keys
   layouts:
@@ -196,6 +197,14 @@ es:
       table_th_car_model: Modelo Auto
       table_th_actions: Acciones
       button_create_certificate: Crear Certificado
+    new:
+      title: Crear Cliente
+      button_create_execution: Crear Cliente
+      link_to_cancel: Cancelar
+    edit:
+      title: Editar Cliente
+      button_edit_execution: Editar Cliente
+      link_to_cancel: Cancelar
       
   certificates:
     index:
@@ -223,6 +232,8 @@ es:
       label_link_to_back: Volver
     new:
       title: Crear Certificado
+      button_create_execution: Crear Certificado
+      link_to_cancel: Cancelar
 
   admin:
     users:

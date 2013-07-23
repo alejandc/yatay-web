@@ -11,12 +11,12 @@
     
     <div class="row-fluid">
       <div class="span7 offset1">
-				<%= form_for @client, :html => { :class => 'form-horizontal', :style => "margin-bottom: 0px;"} do |f| %>
+				<%= form_for @client, :html => { :class => 'form-horizontal', :style => "margin-bottom: 0px;", :method => :put} do |f| %>
 					<%= render :partial => 'form', :locals => {:f => f} %>
 
 				  <div class="control-group">
             <div class="controls">
-              <%= f.submit t('.button_create_execution'), :class => 'btn btn-primary' %>
+              <%= f.submit t('.button_edit_execution'), :class => 'btn btn-primary' %>
               &nbsp; 
               <%= link_to t('.link_to_cancel'), :back, :class => 'btn' %>
             </div>
