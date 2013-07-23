@@ -4,6 +4,7 @@ class CertificatesController < ApplicationController
     respond_to do |format|
       format.html do
         @certificate = Certificate.new
+        @certificate.client = Client.new
         
         if params[:certificate]
           @certificate.attributes = params[:certificate]

@@ -92,15 +92,6 @@ es:
       
   # Active Record configuration
   activerecord:
-    enums:
-      booking:
-        country_codes:
-          AR: Argentina
-          US: EEUU
-          BR: Brasil
-          MX: México
-          PA: Panamá
-          
     errors:
       messages:
         record_invalid: objeto invalido
@@ -137,6 +128,7 @@ es:
     models:
       user: Usuario
       certificate: Certificado
+      client: Cliente
 
     attributes:
       user:
@@ -153,6 +145,11 @@ es:
         taxi_license_number: Número Licencia
         clock_number: Número Reloj
         titular: Titular
+      client:
+        name: Nombre
+        document_type: Tipo documento
+        document_number: Nro. documento
+        address: Dirección
 
 
   helpers:

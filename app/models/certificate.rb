@@ -34,7 +34,8 @@ class Certificate < ActiveRecord::Base
 
   belongs_to :client
 
-
+  accepts_nested_attributes_for :client
+  
   def preset_values
     if self.new_record?
       self.registrant                   = "RELOJERIA YATAY"

@@ -22,7 +22,6 @@
             <th> <%=t('.table_th_clock_number')%> </th>
             <th> <%=t('.table_th_car_model')%> </th>
             <th> <%=t('.table_th_motor_number')%> </th>
-            <th> <%=t('.table_th_domain_number')%> </th>
             <th style="text-align: center;"> <%=t('.table_th_actions')%> </th>
           </tr>
         </thead>
@@ -31,13 +30,12 @@
           <% @certificates.each_with_index do |certificate, index| %>
             <tr>
               <td style="text-align: center;"><%= index %></td>
-              <td><%= certificate.titular %></td>
-              <td><%= "#{certificate.document_type} #{certificate.document_number}" %></td>
+              <td><%= certificate.client.name %></td>
+              <td><%= certificate.client.get_document_info %></td>
               <td><%= certificate.taxi_license_number %></td>
               <td><%= certificate.clock_number %></td>
               <td><%= certificate.car_model %></td>
               <td><%= certificate.motor_number %></td>
-              <td><%= certificate.domain_number %></td>
               
               <td style="text-align: center;">
                 <div class="btn-group">

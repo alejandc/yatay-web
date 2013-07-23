@@ -3,7 +3,7 @@
 # Table name: clients
 #
 #  id              :integer          not null, primary key
-#  titular         :string(255)
+#  name            :string(255)
 #  document_type   :string(255)
 #  document_number :string(255)
 #  address         :string(255)
@@ -15,8 +15,9 @@ class Client < ActiveRecord::Base
 
 	has_many :certificates, :dependent => :destroy
 
-	
-
-	
-
+  validate :name, :document_type, :document_number, :address, :presence => true
+  
+  def get_document_info
+    "#{self.document_type} #{self.document_number}"
+  end
 end

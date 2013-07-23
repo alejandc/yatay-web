@@ -19,17 +19,18 @@
             <%= form_for @certificate, url: certificates_path, method: 'get', html: {class: 'form-inline', style: 'margin-bottom: 0px;'} do |f| %>
               
               <div class="row-fluid">
-                 <% if nil %>
-                <div class="span3">
-                  <%= f.label :titular, :class => 'control-label' %> &nbsp;
-                  <%= f.text_field :titular, :class => 'span12' %>
-                </div>
+                <%= f.fields_for :client do |cl| %>
+                  <div class="span3">
+                    <%= cl.label :name, :class => 'control-label' %> &nbsp;
+                    <%= cl.text_field :name, :class => 'span12' %>
+                  </div>
+                <% end %>
                 
                 <div class="span3">
                   <%= f.label :taxi_license_number, :class => 'control-label' %> &nbsp;
                   <%= f.text_field :taxi_license_number, :class => 'span12' %>
                 </div>
-                <% end %>
+                
                 <div class="span3">
                   <%= f.label :clock_number, :class => 'control-label' %> &nbsp;
                   <%= f.text_field :clock_number, :class => 'span12' %>

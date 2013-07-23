@@ -16,7 +16,6 @@ body {
   background-color: #DDDDDD !important;
   color: #333333 !important;
   font-family: 'Varela Round', sans-serif !important;
-  font-size: 12px !important;
 }
 
 .field_with_errors {
@@ -36,10 +35,4 @@ h3 {
 	font-size: 36px !important;	
 	font-weight: normal !important;
   margin-bottom: 25px !important;
-}
-
-label {
-	font-size: 16px !important;
-	font-weight: bold !important;
-	color: #88BE71 !important;	
 }
