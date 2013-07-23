@@ -41,7 +41,7 @@ class CertificatesController < ApplicationController
       format.html
       format.pdf do
         pdf = CertificatePdf.new(@certificate)
-        send_data pdf.render, filename: "certificado_tecnico_#{@certificate.titular.gsub(/\s+/, '_')}.pdf", type: "application/pdf", disposition: "inline"
+        send_data pdf.render, filename: "certificado_tecnico_#{@certificate.client.name.gsub(/\s+/, '_')}.pdf", type: "application/pdf", disposition: "inline"
       end
     end
   end

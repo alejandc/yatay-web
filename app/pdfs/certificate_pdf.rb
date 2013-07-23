@@ -3,6 +3,7 @@ class CertificatePdf < Prawn::Document
   def initialize(certificate)
     super(page_size: "A4", page_layout: :landscape)
     @certificate = certificate
+    @client = certificate.client
     generate_certificate
   end
   
@@ -29,12 +30,12 @@ class CertificatePdf < Prawn::Document
 
               [{:content => "", :colspan => 3}],
 
-              [{:content => "Titular licencia de taxi: #{@certificate.titular}", :colspan => 3}],
+              [{:content => "Titular licencia de taxi: #{@client.name}", :colspan => 3}],
 
-              [{:content => "Documento tipo: #{@certificate.document_type}", :colspan => 1},
-               {:content => "Documento Nro.: #{@certificate.document_number}", :colspan => 2}],
+              [{:content => "Documento tipo: #{@client.document_type}", :colspan => 1},
+               {:content => "Documento Nro.: #{@client.document_number}", :colspan => 2}],
 
-              [{:content => "Domicilio legal: #{@certificate.address}", :colspan => 3}],
+              [{:content => "Domicilio legal: #{@client.address}", :colspan => 3}],
 
               [{:content => "Licencia Taxi Nro.: #{@certificate.taxi_license_number}", :colspan => 1},
                {:content => "Marca Auto: #{@certificate.car_brand}", :colspan => 2}],
@@ -52,7 +53,7 @@ class CertificatePdf < Prawn::Document
               
               [{:content => "", :colspan => 3}],
               
-              [{:content => "Trabajo Realizado / Observaciones: \n\n\n\n Pulsos por kilómetro:", :colspan => 3}],
+              [{:content => "Trabajo Realizado / Observaciones: \n\n\n\n Pulsos por kilómetro: #{@certificate.pulses_per_km}", :colspan => 3}],
               
               [{:content => "", :colspan => 3}],
               
