@@ -221,6 +221,8 @@ es:
       button_delete_filter: Borrar Filtro
     show:
       label_link_to_back: Volver
+    new:
+      title: Crear Certificado
 
   admin:
     users:
