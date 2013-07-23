@@ -4,7 +4,7 @@ class ClientsController < ApplicationController
     respond_to do |format|
       format.html do
         @client_filter = Client.new
-        
+
         if params[:client]
           @client_filter.attributes = params[:client]
           @clients = Client.search(@client_filter).order("created_at DESC").page(params[:page])
