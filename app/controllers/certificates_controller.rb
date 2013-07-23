@@ -22,6 +22,10 @@ class CertificatesController < ApplicationController
     @certificate = Certificate.new
   end
   
+  def edit
+    @certificate = Certificate.find(params[:id])
+  end
+  
   def create
     @certificate = Certificate.new(certificate_params)
     
@@ -53,7 +57,7 @@ class CertificatesController < ApplicationController
   def update
     @certificate = Certificate.find(params[:id])
 
-		if @certificate.update_attributes(client_params)
+		if @certificate.update_attributes(certificate_params)
 			redirect_to certificates_path
 		else
 			respond_to do |format|

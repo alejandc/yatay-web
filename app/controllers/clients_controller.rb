@@ -4,11 +4,12 @@ class ClientsController < ApplicationController
     respond_to do |format|
       format.html do
         @client_filter = Client.new
-
+        
         if params[:client]
           @client_filter.attributes = params[:client]
           @clients = Client.search(@client_filter).order("created_at DESC").page(params[:page])
         else
+          @client_filter.certificates = [Certificate.new]
           @clients = Client.order("created_at DESC").page(params[:page])
         end
       end

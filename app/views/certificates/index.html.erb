@@ -40,6 +40,7 @@
               <td style="text-align: center;">
                 <div class="btn-group">
                   <%= link_to "<i class='icon-eye-open'></i>".html_safe, certificate_path(certificate), :class => 'btn', :rel => 'tooltip', :title => 'Detalle' %>
+                  <%= link_to "<i class='icon-edit'></i>".html_safe, edit_certificate_path(certificate), :class => 'btn', :rel => 'tooltip', :title => 'Editar' %>
                   <%= link_to "<i class='icon-print'></i>".html_safe, certificate_path(certificate, format: "pdf"), :class => 'btn', :rel => 'tooltip', :title => 'Imprimir', :target => "_blank" %>
                 </div>
               </td>

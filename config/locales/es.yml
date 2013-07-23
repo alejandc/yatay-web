@@ -255,6 +255,10 @@ es:
       title: Crear Certificado
       button_create_execution: Crear Certificado
       link_to_cancel: Cancelar
+    edit:
+      title: Editar Certificado
+      button_edit_execution: Editar Certificado
+      link_to_cancel: Cancelar
 
   admin:
     users:
