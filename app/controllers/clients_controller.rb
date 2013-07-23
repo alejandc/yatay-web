@@ -36,10 +36,21 @@ class ClientsController < ApplicationController
   def show
     @client_filter = Client.new
     @client = Client.find(params[:id])
+    
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
     end
-  end  
+  end
+  
+  def destroy
+		@client = Client.find(params[:id])
+		@client.destroy
+		
+		respond_to do |format|
+		  format.html { redirect_to clients_url }
+	    format.js
+	  end
+	end
 
   private
     def client_params

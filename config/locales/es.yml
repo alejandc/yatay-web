@@ -183,10 +183,18 @@ es:
     index:
       info_label_empty_clients: No hay clientes ingresados por el momento...
       button_create_client: Crear Cliente
+      confirm_destroy_popup: Confirmar eliminación del Cliente?
     filters:
       link_filter: Filtros
       button_apply_filter: Buscar
       button_delete_filter: Borrar Filtro
+    show:
+      info_label_empty_client_certificates: El usuario no posee certificados...
+      table_th_date: Fecha
+      table_th_taxi_license_number: Licencia
+      table_th_clock_number: Nro. Reloj
+      table_th_car_model: Modelo Auto
+      table_th_actions: Acciones
       
   certificates:
     index:
@@ -204,6 +212,8 @@ es:
       table_th_chasis_number: Chasis
       table_th_domain_number: Dominio
       table_th_actions: Acciones
+      button_create_certificate: Crear Certificado
+      confirm_destroy_popup: Confirmar eliminación del Certificado?
     filters:
       link_filter: Filtros
       button_apply_filter: Buscar

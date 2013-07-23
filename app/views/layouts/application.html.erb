@@ -25,10 +25,6 @@
               <li class="<%= (controller_name == "clients" and action_name.match(/index|show/)) ? "active" : "" %>">
                 <a href="/clients"> <%= t('.clients_link')%> </a>
               </li>
-              
-              <li class="<%= (controller_name =="certificates" and action_name == "new") ? "active" : "" %>"> 
-                <%= link_to t('.create_certificate_link'), new_certificate_path %>
-              </li>
               <li class="<%= (controller_name == "certificates" and action_name.match(/index|show/)) ? "active" : "" %>">
                 <a href="/certificates"> <%= t('.certificates_link')%> </a>
               </li>

@@ -2,6 +2,14 @@
 
 <div class="row-fluid">
   <div class="span10 offset1">
+    <div class="pull-right">
+      <%= link_to t('.button_create_certificate'), new_certificate_path, class: "btn btn-primary", style: 'margin-bottom: 10px;' %>
+    </div>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span10 offset1">
     
     <% if @certificates.blank? %>
         <div class="alert alert-warning">
