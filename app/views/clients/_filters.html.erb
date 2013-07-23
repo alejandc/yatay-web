@@ -14,21 +14,20 @@
           </div>
               
         </div>
-        <div id="collapse_certificate_filter" class="accordion-body collapse">
+        <div id="collapse_client_filter" class="accordion-body collapse">
           <div class="accordion-inner">
             
             <%= form_for @client_filter, url: clients_path, method: 'get', html: {class: 'form-inline', style: 'margin-bottom: 0px;'} do |f| %>
               
               <div class="row-fluid">
-
                 <div class="span3">
-                  <%= f.label :titular, :class => 'control-label' %> &nbsp;
-                  <%= f.text_field :titular, :class => 'span12' %>
+                  <%= f.label :name, :class => 'control-label' %> &nbsp;
+                  <%= f.text_field :name, :class => 'span12' %>
                 </div>
-
-                <div class="span3">
-                  <%= f.label :titular, :class => 'control-label' %> &nbsp;
-                  <%= f.text_field :titular, :class => 'span12' %>
+                
+                <div class="span6">
+                  <%= f.label :document_number, :class => 'control-label' %> <br/>
+                  <%= f.text_field :document_number, :class => 'span6' %>
                 </div>
                 
                 <div class="span3">

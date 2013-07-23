@@ -179,6 +179,15 @@ es:
       admin_link: "Admin"
       admin_users_link: "Usuarios"
   
+  clients:
+    index:
+      info_label_empty_clients: No hay clientes ingresados por el momento...
+      button_create_client: Crear Cliente
+    filters:
+      link_filter: Filtros
+      button_apply_filter: Buscar
+      button_delete_filter: Borrar Filtro
+      
   certificates:
     index:
       info_label_empty_certificates: No hay certificados ingresados por el momento...

@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
   def index
     respond_to do |format|
       format.html do
-        @client = Client.new
+        @client_filter = Client.new
         
         if params[:client]
           @client.attributes = params[:client]
@@ -20,8 +20,8 @@ class ClientsController < ApplicationController
   end
 
   def create
-    debugger
     @client = Client.create(params[:client])
+    
     respond_to do |format|
       if @client.save
         format.html { redirect_to @client, notice: 'El cliente fue cargado' }
