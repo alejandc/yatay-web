@@ -19,7 +19,12 @@ class CertificatesController < ApplicationController
   end
   
   def new
-    @certificate = Certificate.new
+    if params[:certificate_id]
+      @certificate = Certificate.find(params[:certificate_id]).dup
+    else
+      @certificate = Certificate.new
+    end
+    
     @client_id = params[:client_id]
   end
   
