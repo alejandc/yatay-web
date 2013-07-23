@@ -47,4 +47,6 @@ group :develop, :test do
   gem 'annotate'            
 end
 
+gem 'rails_12factor', group: :production
+
 
