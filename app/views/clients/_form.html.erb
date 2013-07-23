@@ -8,7 +8,7 @@
 <div class="control-group">
   <%= f.label :document_type, "Tipo de documento:", :class => 'control-label' %>
   <div class="controls">
-    <%= f.text_field :document_type, :class => 'input-xlarge' %>
+    <%= f.select :document_type, Client::DOCUMENT_TYPES, {:include_blank => t('.option_blank_select_document_type')}%>
   </div>
 </div>
 

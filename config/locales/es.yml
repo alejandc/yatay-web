@@ -206,6 +206,8 @@ es:
       title: Editar Cliente
       button_edit_execution: Editar Cliente
       link_to_cancel: Cancelar
+    form:
+      option_blank_select_document_type: Seleccione tipo documento...
       
   certificates:
     index:

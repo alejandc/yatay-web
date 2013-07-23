@@ -12,9 +12,14 @@
 #
 
 class Client < ActiveRecord::Base
+  
+  DOCUMENT_TYPES = ["DNI", "CI", "LE", "LC"]
 
 	has_many :certificates, :dependent => :destroy
 
+  validates :document_number, numericality: { only_integer: true }
+  validates :document_type, inclusion: { in: Client::DOCUMENT_TYPES }
+  validates :name, :document_type, :document_number, :address, length: { maximum: 250 }
   validates :name, :document_type, :document_number, :address, :presence => true
   
   def get_document_info
