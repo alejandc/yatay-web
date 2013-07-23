@@ -16,15 +16,17 @@ class CertificatePdf < Prawn::Document
     
     table [[{:content => "", :background_color => '939292'}, original, {:content => "", :background_color => '939292'}],
            [{:content => "", :colspan => 3, :background_color => '939292'}]], :cell_style => {:border_color => '939292'}
+    
+    
     # Encabezado del certificado
-    data = get_certificate_header
-    data += get_certificat_info("DUPLICADO")
+    #data = get_certificate_header
+    #data += get_certificat_info("DUPLICADO")
     
-    duplicated = make_table data, :column_widths => [120, 120, 120], :cell_style => {:size => 8, :border_color => '939292'}
+    #duplicated = make_table data, :column_widths => [120, 120, 120], :cell_style => {:size => 8, :border_color => '939292'}
     
-    move_up 496.5
-    table [[{:content => "", :background_color => '939292'}, duplicated, {:content => "", :background_color => '939292'}],
-           [{:content => "", :colspan => 3, :background_color => '939292'}]], :cell_style => {:border_color => '939292'}, :position => :right
+    #move_up 496.5
+    #table [[{:content => "", :background_color => '939292'}, duplicated, {:content => "", :background_color => '939292'}],
+    #       [{:content => "", :colspan => 3, :background_color => '939292'}]], :cell_style => {:border_color => '939292'}, :position => :right
   end
   
   def get_certificate_header
