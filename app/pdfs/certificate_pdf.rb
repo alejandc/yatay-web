@@ -30,7 +30,7 @@ class CertificatePdf < Prawn::Document
   def get_certificate_header
     [ 
       [{:content => "\n CERTIFICADO TECNICO \n RELOJ TAXIMETRO \n GOBIERNO DE LA CIUDAD DE BUENOS AIRES \n Resolución Nro. 261 - SPS - 95 \n\n",
-         :colspan => 3, :align => :center, :borders => [:top, :left, :right], :font_style => :bold, :background_color => '939292', :size => 12}]
+         :colspan => 3, :size => 12, :align => :center, :borders => [:top, :left, :right], :font_style => :bold, :background_color => '939292', :size => 12}]
     ]
   end
   

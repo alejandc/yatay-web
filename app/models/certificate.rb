@@ -81,7 +81,7 @@ class Certificate < ActiveRecord::Base
     query = {}
     
     joins_info = ""
-    unless certificate_filter.client.blank? and certificate_filter.client.name.blank?
+    if !certificate_filter.client.nil? and !certificate_filter.client.name.blank?
       query['clients.name'] = certificate_filter.client.name.strip
       joins_info = "JOIN clients ON certificates.client_id = clients.id"
     end
