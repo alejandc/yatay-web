@@ -54,10 +54,10 @@
                   <td><%= cert.car_model %></td>
                   <td style="text-align: center;">
                     <div class="btn-group">
-                      <%= link_to "<i class='icon-eye-open'></i>".html_safe, certificate_path(cert), :class => 'btn', :rel => 'tooltip', :title => 'Detalle' %>
                       <%= link_to "<i class='icon-edit'></i>".html_safe, edit_certificate_path(cert), :class => 'btn', :rel => 'tooltip', :title => 'Editar' %>
                       <%= link_to "<i class='icon-file'></i>".html_safe, new_certificate_path(client_id: @client.id, certificate_id: cert.id), :class => 'btn', :rel => 'tooltip', :title => 'Renovar' %>
                       <%= link_to "<i class='icon-print'></i>".html_safe, certificate_path(cert, format: "pdf"), :class => 'btn', :rel => 'tooltip', :title => 'Imprimir', :target => "_blank" %>
+                      <%= link_to "<i class='icon-remove'></i>".html_safe, certificate_path(cert), :confirm => t('.confirm_destroy_popup'), :method => :delete, :class => 'btn btn-danger', :rel => 'tooltip', :title => 'Eliminar' %>
                     </div>
                   </td>             
                 </tr>     
