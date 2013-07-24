@@ -8,7 +8,6 @@ class CertificatePdf < Prawn::Document
   end
   
   def generate_certificate
-    # Encabezado del certificado
     data = get_certificate_header
     data += get_certificat_info("ORIGINAL")
     
