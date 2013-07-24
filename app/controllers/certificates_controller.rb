@@ -73,6 +73,16 @@ class CertificatesController < ApplicationController
 		end
   end
   
+  def destroy
+  	@certificate = Certificate.find(params[:id])
+  	@certificate.destroy
+  	
+  	respond_to do |format|
+  	  format.html { redirect_to certificates_url }
+      format.js
+    end
+  end
+  
   private
     def certificate_params
       params_certificate = ActionController::Parameters.new(params['certificate'])
