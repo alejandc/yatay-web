@@ -21,6 +21,7 @@ class CertificatesController < ApplicationController
   def new
     if params[:certificate_id]
       @certificate = Certificate.find(params[:certificate_id]).dup
+      @certificate_id_refered = params[:certificate_id]
     else
       @certificate = Certificate.new
     end
@@ -36,7 +37,7 @@ class CertificatesController < ApplicationController
     @certificate = Certificate.new(certificate_params)
     
     if @certificate.save
-      redirect_to certificates_path, :notice => I18n.t('notice_certificate_created_successfully')
+      redirect_to certificate_path(@certificate)
     else
       @client_id = params[:client_id]
       respond_to do |format|
