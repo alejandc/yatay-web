@@ -10,7 +10,7 @@ input:focus {
 }
 
 .navbar-inner {
-  background-color: #88BE71 !important;
+  background-color: #2BAB36 !important;
   background-image: none;
   border-bottom: 4px solid #A2C892;
   border-radius: 4px 4px 4px 4px;
@@ -47,7 +47,7 @@ input:focus {
 }
 
 .navbar .brand {
-  color: white;
+  color: #EEE600;
   display: block;
   float: left;
   font-family: 'Varela Round',sans-serif;
