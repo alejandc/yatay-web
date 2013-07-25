@@ -1,7 +1,7 @@
 class CertificatePdf < Prawn::Document
   
   def initialize(certificate)
-    super(page_size: "A4", page_layout: :landscape, :top_margin => 50, :left_margin => 28, :right_margin => 28)
+    super(page_size: "A4", page_layout: :landscape, :top_margin => 33, :left_margin => 20, :right_margin => 20, :bottom_margin => 20)
     @certificate = certificate
     @client = certificate.client
     generate_certificate
@@ -9,7 +9,7 @@ class CertificatePdf < Prawn::Document
   
   def generate_certificate
     #Creamos el header del certificado
-    header_table = make_table get_header_table, :column_widths => [130, 130, 130], :cell_style => {:size => 10, :border_color => '939292'}
+    header_table = make_table get_header_table, :column_widths => [130, 130, 130], :cell_style => {:size => 11, :border_color => '000000', :border_width => 2}
     static_content = make_table get_static_content("ORIGINAL"), :column_widths => [130, 130, 130], :cell_style => {:size => 8, :border_color => '939292'}
     client_info = make_table get_client_info, :column_widths => [195, 195], :cell_style => {:size => 8, :border_color => '939292'}
     
@@ -18,7 +18,7 @@ class CertificatePdf < Prawn::Document
             [client_info] ], :column_widths => [390], :cell_style => {:border_color => '939292', :border_width => 5}
             
     
-    move_up 496
+    move_up 531
     
     static_content = make_table get_static_content("DUPLICADO"), :column_widths => [130, 130, 130], :cell_style => {:size => 8, :border_color => '939292'}
     table [ [header_table],
@@ -36,7 +36,7 @@ class CertificatePdf < Prawn::Document
   def get_static_content(value)
     [
       [{:content => "Titular del registro: #{@certificate.registrant} \n de Carlos Fernandez", :colspan => 2},
-       {:content => "Nro. Certificado \n Técnico \n #{@certificate.technical_certificate_number} \n #{value}", :rowspan => 2, :align => :center}],
+       {:content => "Nro. Certificado \n Técnico \n #{@certificate.get_technical_certificate_number} \n #{value}", :rowspan => 2, :align => :center, :font_style => :bold}],
 
       [{:content => "Domicilio Comercial: #{@certificate.business_address}", :colspan => 2}],
 
@@ -46,7 +46,7 @@ class CertificatePdf < Prawn::Document
 
       [{:content => "Habilitación: #{@certificate.habilitation}", :colspan => 1},
        {:content => "Nro. Metrología Legal: #{@certificate.legal_metrology_number}", :colspan => 1}, 
-       {:content => "Fecha Emisión: \n #{@certificate.created_at.strftime('%d/%m/%Y')}", :align => :center, :font_style => :bold, :colspan => 1}]
+       {:content => "Fecha Emisión: \n #{@certificate.created_at.strftime('%d/%m/%Y')}", :align => :center, :font_style => :bold, :colspan => 1, :size => 12}]
     ]
   end
   
@@ -75,12 +75,15 @@ class CertificatePdf < Prawn::Document
       
       [{:content => "", :colspan => 2, :background_color => '939292'}],
       
-      [{:content => "Trabajo Realizado / Observaciones: \n\n\n\n Pulsos por kilómetro: #{@certificate.pulses_per_km}", :colspan => 2}],
+      [{:content => "Trabajo Realizado / Observaciones: \n\n\n\n", :colspan => 2, :borders => [:left, :top, :right]}],
+      
+      [{:content => "Pulsos por kilómetro:", :colspan => 1, :borders => [:left, :bottom]},
+       {:content => "#{@certificate.pulses_per_km}", :colspan => 1, :borders => [:right, :bottom]}],
       
       [{:content => "", :colspan => 2, :background_color => '939292'}],
       
-      [{:content => "\n\n\n FIRMA Y ACLARACION \n TITULAR LICENCIA", :colspan => 1, :align => :center, :borders => [:top, :left, :bottom]},
-       {:content => "\n\n\n FIRMA Y SELLO DEL \n RESPONSABLE DEL TALLER", :colspan => 1, :align => :center, :borders => [:top, :bottom, :right]}]
+      [{:content => "\n\n\n\n\n FIRMA Y ACLARACION \n TITULAR LICENCIA", :colspan => 1, :align => :center, :borders => [:top, :left, :bottom]},
+       {:content => "\n\n\n\n\n FIRMA Y SELLO DEL \n RESPONSABLE DEL TALLER", :colspan => 1, :align => :center, :borders => [:top, :bottom, :right]}]
     ]
   end
 end
