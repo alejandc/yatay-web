@@ -10,7 +10,7 @@ input:focus {
 }
 
 .navbar-inner {
-  background-color: #2BAB36 !important;
+  background-color: #000000 !important;
   background-image: none;
   border-bottom: 4px solid #A2C892;
   border-radius: 4px 4px 4px 4px;
@@ -32,7 +32,7 @@ input:focus {
 
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
   background-color: transparent;
-  color: #FFFFFF;
+  color: red;
   text-decoration: none;
 }
 
@@ -43,7 +43,7 @@ input:focus {
 
 .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background-color: transparent;
-  color: white;
+  color: red;
 }
 
 .navbar .brand {
