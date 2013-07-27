@@ -19,7 +19,7 @@ class CertificatePdf < Prawn::Document
             [{:content => " ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, client_info, {:content => " ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}] ]
             
     
-    move_up 548
+    move_up 558
     
     static_content = make_table get_static_content("DUPLICADO"), :column_widths => [125, 125, 125]
     
@@ -38,7 +38,6 @@ class CertificatePdf < Prawn::Document
   
   def get_static_content(value)
     [
-      
       [{:content => "Titular del registro: #{@certificate.registrant} \n de Carlos Fernandez", :colspan => 2, :size =>8, :border_color => 'D8D8D8', :borders => [:left, :right, :bottom]},
        {:content => "Nro. Certificado \n Técnico", :align => :center, :borders => [:left, :right, :top], :size =>8, :border_color => 'D8D8D8', :borders => [:left, :right]}],
 
@@ -57,6 +56,8 @@ class CertificatePdf < Prawn::Document
   
   def get_client_info
     [
+      [{:content => "", :colspan => 2, :background_color => 'D8D8D8'}],
+      
       [{:content => "Titular licencia de taxi: #{@client.name}", :colspan => 2}],
 
       [{:content => "Documento tipo: #{@client.document_type}", :colspan => 1, :borders => [:top, :left, :bottom]},
