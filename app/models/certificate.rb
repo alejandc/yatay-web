@@ -56,8 +56,6 @@ class Certificate < ActiveRecord::Base
             :legal_metrology_number, :registration_ssty_number,
             :taxi_license_number, :car_brand, :clock_brand, :car_model, :domain_number, :clock_number,
             :precinct_number, :motor_number, :chasis_number, :observations, :pulses_per_km, :client_id, :presence => true
-            
-  validates :taxi_license_number, uniqueness: true
   
   def preset_values
     if self.new_record?

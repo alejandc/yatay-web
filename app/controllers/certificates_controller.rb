@@ -37,6 +37,10 @@ class CertificatesController < ApplicationController
     @certificate = Certificate.new(certificate_params)
     
     if @certificate.save
+      # Borramos el certificado que estamos renovando ya que fue duplicado...
+      unless params[:certificate_id_refered].blank?
+        Certificate.find(params[:certificate_id_refered]).destroy
+      end
       redirect_to certificate_path(@certificate)
     else
       @client_id = params[:client_id]

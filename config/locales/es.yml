@@ -255,7 +255,8 @@ es:
       label_link_to_back: Volver
     new:
       title: Crear Certificado
-      button_create_execution: Crear Certificado
+      button_create_certificate: Crear Certificado
+      button_renew_certificate: Renovar Certificado
       link_to_cancel: Cancelar
     edit:
       title: Editar Certificado

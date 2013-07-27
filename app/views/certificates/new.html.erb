@@ -15,10 +15,11 @@
 					<%= render :partial => 'form', :locals => {:f => f} %>
           
           <%= f.hidden_field :client_id, value: @client_id %>
+          <%= hidden_field_tag :certificate_id_refered, @certificate_id_refered %>
           
 				  <div class="control-group">
             <div class="controls">
-              <%= f.submit t('.button_create_execution'), :class => 'btn btn-primary' %>
+              <%= f.submit ((@certificate_id_refered.nil?) ? t('.button_create_certificate') : t('.button_renew_certificate')), :class => 'btn btn-primary' %>
               &nbsp; 
               <%= link_to t('.link_to_cancel'), :back, :class => 'btn' %>
             </div>
