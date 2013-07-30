@@ -14,9 +14,9 @@ class CertificatePdf < Prawn::Document
     client_info = make_table get_client_info, :column_widths => [187, 187], :cell_style => {:size => 8, :border_color => 'D8D8D8'}
     
     table [ [{:content => "", :border_color => 'D8D8D8', :background_color => 'D8D8D8', :colspan => 3}],
-            [{:content => " ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, header_table, {:content => " ", :border_color => '000000', :background_color => 'D8D8D8', :borders => [:left]}],
-            [{:content => " ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, static_content, {:content => " ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}],
-            [{:content => " ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, client_info, {:content => " ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}] ]
+            [{:content => "  ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, header_table, {:content => "  ", :border_color => '000000', :background_color => 'D8D8D8', :borders => [:left]}],
+            [{:content => "  ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, static_content, {:content => "  ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}],
+            [{:content => "  ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, client_info, {:content => "  ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}] ]
             
     
     move_up 558
@@ -24,9 +24,9 @@ class CertificatePdf < Prawn::Document
     static_content = make_table get_static_content("DUPLICADO"), :column_widths => [125, 125, 125]
     
     table [ [{:content => "", :border_color => 'D8D8D8', :background_color => 'D8D8D8', :colspan => 3}],
-            [{:content => " ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, header_table, {:content => " ", :border_color => '000000', :background_color => 'D8D8D8', :borders => [:left]}],
-            [{:content => " ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, static_content, {:content => " ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}],
-            [{:content => " ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, client_info, {:content => " ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}] ], :position => :right
+            [{:content => "  ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, header_table, {:content => "  ", :border_color => '000000', :background_color => 'D8D8D8', :borders => [:left]}],
+            [{:content => "  ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, static_content, {:content => "  ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}],
+            [{:content => "  ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, client_info, {:content => "  ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}] ], :position => :right
   end
   
   def get_header_table
