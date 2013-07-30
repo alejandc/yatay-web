@@ -10,7 +10,9 @@ set :deploy_to, "/var/www/#{application}"
 set :deploy_via, :copy
 #set :copy_cache, true
 
-server "localhost", :web, :app, :db, primary: true
+role :app, ""
+role :web, "localhost"
+role :db,  "localhost", :primary => true
 
 # Add RVM's lib directory to the load path.
 set :rvm_ruby_string, 'ruby-1.9.3-p392@yatay'
