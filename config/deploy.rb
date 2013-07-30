@@ -47,7 +47,6 @@ end
 
 # if you want to clean up old releases on each deploy uncomment this:
 after  "deploy:restart", "deploy:cleanup"
-after  "deploy:restart", "resque:restart"
 after  "deploy", "deploy:migrate"
 before "deploy:assets:precompile", "symlinks"
 before "deploy:restart", "unicorn:stop"
