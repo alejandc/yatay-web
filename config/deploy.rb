@@ -50,3 +50,5 @@ after  "deploy:restart", "deploy:cleanup"
 after  "deploy", "deploy:migrate"
 before "deploy:assets:precompile", "symlinks"
 before "deploy:restart", "unicorn:stop"
+after 'deploy:restart', 'unicorn:reload' # app IS NOT preloaded
+after 'deploy:restart', 'unicorn:restart'  # app preloaded
