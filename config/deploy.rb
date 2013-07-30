@@ -8,7 +8,7 @@ set :user, "server"
 set :use_sudo, false
 
 set :deploy_to, "/var/www/#{application}"
-set :deploy_via, :copy
+#set :deploy_via, :copy
 #set :copy_cache, true
 
 role :app, "localhost"
@@ -48,7 +48,6 @@ end
 # if you want to clean up old releases on each deploy uncomment this:
 after  "deploy:restart", "deploy:cleanup"
 after  "deploy:restart", "resque:restart"
-after  "deploy:update", "newrelic:notice_deployment"
 after  "deploy", "deploy:migrate"
 before "deploy:assets:precompile", "symlinks"
 before "deploy:restart", "unicorn:stop"
