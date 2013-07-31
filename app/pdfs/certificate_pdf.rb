@@ -1,7 +1,7 @@
 class CertificatePdf < Prawn::Document
   
   def initialize(certificate)
-    super(page_size: "A4", page_layout: :landscape, :top_margin => 10, :left_margin => 10, :right_margin => 10, :bottom_margin => 10)
+    super(page_size: "A4", page_layout: :landscape, :top_margin => 10, :left_margin => 5, :right_margin => 5, :bottom_margin => 10)
     @certificate = certificate
     @client = certificate.client
     generate_certificate
@@ -19,7 +19,7 @@ class CertificatePdf < Prawn::Document
             [{:content => "  ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}, client_info, {:content => "  ", :border_color => 'D8D8D8', :background_color => 'D8D8D8'}] ]
             
     
-    move_up 558
+    move_up 549
     
     static_content = make_table get_static_content("DUPLICADO"), :column_widths => [125, 125, 125]
     
@@ -81,7 +81,7 @@ class CertificatePdf < Prawn::Document
       
       [{:content => "", :colspan => 2, :background_color => 'D8D8D8'}],
       
-      [{:content => "Trabajo Realizado / Observaciones: \n\n\n\n", :colspan => 2, :borders => [:left, :top, :right]}],
+      [{:content => "Trabajo Realizado / Observaciones: \n\n #{@certificate.observations}", :colspan => 2, :borders => [:left, :top, :right]}],
       
       [{:content => "Pulsos por kilómetro:", :colspan => 1, :borders => [:left, :bottom]},
        {:content => "#{@certificate.pulses_per_km}", :colspan => 1, :borders => [:right, :bottom]}],

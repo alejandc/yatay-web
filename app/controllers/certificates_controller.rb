@@ -70,7 +70,7 @@ class CertificatesController < ApplicationController
     @certificate = Certificate.find(params[:id])
 
 		if @certificate.update_attributes(certificate_params)
-			redirect_to certificates_path
+			redirect_to certificate_path(@certificate)
 		else
 			respond_to do |format|
         format.html { render :edit }
