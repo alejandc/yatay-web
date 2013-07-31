@@ -15,7 +15,7 @@
 
 class Client < ActiveRecord::Base
   
-  DOCUMENT_TYPES = ["DNI", "CI", "LE", "LC"]
+  DOCUMENT_TYPES = ["DNI", "CI", "LE", "LC", "EX"]
 
 	has_many :certificates, :dependent => :destroy
 	
